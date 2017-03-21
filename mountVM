@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. ./config.vm
+
+sshfs -o cache=no,idmap=user,PubkeyAuthentication=no buildbot@10.1.3.$((10 + $ID)):c:\\ mnt
