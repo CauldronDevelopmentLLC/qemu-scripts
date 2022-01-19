@@ -57,9 +57,9 @@ NET_MODEL=virtio
 SOUND= #"-soundhw all"
 DISK_OPTS="cache=none,if=virtio"
 VIDEO=
-MOUSE="-usbdevice tablet"
-KEYBOARD="-usbdevice keyboard"
-MISC="-usb -localtime -monitor stdio"
+MOUSE="-device usb-tablet"
+KEYBOARD=
+MISC="-usb -rtc base=localtime -monitor stdio"
 KEYMAP="-k en-us"
 DSP=
 NICE="nice -n 5"
@@ -123,5 +123,5 @@ echo "Starting VM: $CMD"
 if $TEST; then
     echo "Just a test"
 else
-    $CMD
+    eval $CMD
 fi
