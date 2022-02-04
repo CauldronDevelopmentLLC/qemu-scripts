@@ -76,7 +76,7 @@ Where ``eth0`` is the external network interface.
 
 Also make sure forwarding is enabled.
 
-    sudo sysctl -1 net.ipv4.ip_forward=1
+    sudo sysctl -w net.ipv4.ip_forward=1
 
 To make this configuration permanent add ``net.ipv4.ip_forward = 1`` to
 ``/etc/sysctl.conf`` and save the firewall configuration.
