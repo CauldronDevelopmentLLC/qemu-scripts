@@ -74,6 +74,15 @@ network.  This can be accomplished with:
 
 Where ``eth0`` is the external network interface.
 
+To have this firewall configuration automatically restored on reboot install
+iptables-persistent.
+
+    sudo apt-get install -y iptables-persistent
+
+Save the firewall rules with:
+
+    sudo iptables-save | sudo tee /etc/iptables/rules.v4
+
 Also make sure forwarding is enabled.
 
     sudo sysctl -w net.ipv4.ip_forward=1
